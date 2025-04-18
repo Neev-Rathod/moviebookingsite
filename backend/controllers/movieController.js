@@ -72,10 +72,15 @@ exports.deleteMovie = async (req, res) => {
   try {
     const movie = await Movie.findById(req.params.id);
     if (!movie) return res.status(404).json({ msg: 'Movie not found' });
-    await movie.remove();
+    const bookedSeats = movie.bookings?.length || 0;
+
+    if (bookedSeats > 0) {
+      return res.status(400).json({ message: 'Cannot delete movie with booked seats' });
+    }
+    await movie.deleteOne();;
     res.json({ msg: 'Movie deleted' });
   } catch (err) {
-    res.status(500).send('Server error');
+    res.status(500).json({ message: 'Server error' });
   }
 };
 

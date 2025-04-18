@@ -17,9 +17,9 @@ export default function MovieList() {
   return (
     <div>
       <h2>Now Showing</h2>
-      <div className="grid">
+      <div className="flex flex-col justify-center items-center">
         {movies.map(m => (
-          <MovieCard key={m.id} movie={m} isUser={user?.role==='user'} />
+          <MovieCard key={m.id}  movie={m} isUser={user?.role==='user'} deleteId={m.id} />
         ))}
       </div>
     </div>
