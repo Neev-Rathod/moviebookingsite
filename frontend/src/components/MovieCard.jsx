@@ -37,7 +37,7 @@ export default function MovieCard({ movie, isUser,deleteId}) {
   
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-[1.005]" style={{width:"calc(100% - 60px)"}}>
+    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-[1.005] mb-2" style={{width:"calc(100% - 60px)"}}>
       {/* Movie Image with gradient overlay */}
       <div className="relative h-48 overflow-hidden">
         {movie.imageUrl ? (
