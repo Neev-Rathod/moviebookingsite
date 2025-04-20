@@ -4,7 +4,7 @@ import { AuthProvider, AuthContext } from './context/AuthContext';
 import NavBar           from './components/NavBar';
 import Login            from './components/Login';
 import Signup           from './components/Signup';
-import MovieList from './components/MovieLIst';
+import MovieList from './components/MovieList';
 import AdminDashboard   from './components/AdminDashboard';
 import History          from './components/History';
 import SeatSelection    from './components/SeatSelection';
