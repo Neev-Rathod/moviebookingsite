@@ -12,7 +12,7 @@ export default function MovieList() {
   useEffect(() => {
     (async () => {
       try {
-        const res = await api.get('/movies');
+        const res = await api.get('/api/movies');
         setAllMovies(res.data);
         setMovies(res.data);
       } catch (error) {

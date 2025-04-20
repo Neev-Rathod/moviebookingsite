@@ -47,7 +47,7 @@ export default function AddMovieForm() {
       Object.entries(form).forEach(([k, v]) => data.append(k, v));
       if (file) data.append('image', file);
       
-      await api.post('/movies', data);
+      await api.post('/api/movies', data);
       
       // Clear form
       setForm({
