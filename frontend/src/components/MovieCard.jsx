@@ -2,13 +2,14 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function MovieCard({ movie, isUser,deleteId}) {
+
   const nav = useNavigate();
   const user = localStorage.getItem('role')
   const handleDelete = async () => {
     if (!window.confirm('Are you sure you want to delete this show?')) return;
   
     try {
-      const res = await fetch(`http://localhost:5000/api/movies/${deleteId}`, {
+      const res = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/movies/${deleteId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,

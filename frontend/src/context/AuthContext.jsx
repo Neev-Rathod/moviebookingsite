@@ -11,9 +11,8 @@ export const AuthProvider = ({ children }) => {
     return token && role ? { token, role } : null;
   });
   const navigate = useNavigate();
-
   const login = async (username, password) => {
-    const res = await api.post('/auth/login', { username, password });
+    const res = await api.post('/api/auth/login', { username, password });
     const token = res.data.token;
     const payload = JSON.parse(atob(token.split('.')[1]));
     localStorage.setItem('token', token);
@@ -21,9 +20,8 @@ export const AuthProvider = ({ children }) => {
     setUser({ token, role: payload.role });
     navigate(payload.role === 'admin' ? '/admin' : '/');
   };
-
   const signup = async (username, password) => {
-    const res = await api.post('/auth/signup', { username, password });
+    const res = await api.post('/api/auth/signup', { username, password });
     const token = res.data.token;
     const payload = JSON.parse(atob(token.split('.')[1]));
     localStorage.setItem('token', token);
