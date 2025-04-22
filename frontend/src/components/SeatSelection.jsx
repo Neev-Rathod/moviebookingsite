@@ -10,7 +10,7 @@ export default function SeatSelection() {
 
   useEffect(() => {
     (async () => {
-      const res = await api.get(`/movies/${id}`);
+      const res = await api.get(`/api/movies/${id}`);
       setMovie(res.data);
     })();
   }, [id]);
@@ -31,7 +31,7 @@ export default function SeatSelection() {
       const [row, col] = s.split('-').map(Number);
       return { row, col };
     });
-    await api.post(`/movies/${id}/book`, { seats });
+    await api.post(`/api/movies/${id}/book`, { seats });
     nav('/');
   };
 

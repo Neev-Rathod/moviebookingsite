@@ -9,7 +9,7 @@ export default function History() {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const res = await api.get('/movies/history');
+        const res = await api.get('/api/movies/history');
         setHistory(res.data);
       } catch (error) {
         console.error("Failed to fetch booking history:", error);
@@ -24,7 +24,7 @@ export default function History() {
   const handleCancelBooking = async (movieId) => {
     setCancelling(movieId);
     try {
-      await api.post(`/movies/${movieId}/cancel`);
+      await api.post(`/api/movies/${movieId}/cancel`);
       setHistory(history.filter(booking => booking.movieId !== movieId));
     } catch (error) {
       console.error("Failed to cancel booking:", error);
