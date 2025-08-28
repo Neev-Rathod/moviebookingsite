@@ -66,7 +66,7 @@ A full-stack movie booking application with role-based authentication allowing u
 ### Backend Setup
 1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/movie-booking-app.git
+   git clone https://github.com/Neev-Rathod/moviebookingsite.git
    cd movie-booking-app/backend
    ```
 
